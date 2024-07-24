@@ -1,5 +1,4 @@
-import {FaMoon} from 'react-icons/fa'
-import {MdOutlineLightMode} from 'react-icons/md'
+import {BsMoon, BsBrightnessHigh} from 'react-icons/bs'
 
 import {withRouter, Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -36,9 +35,9 @@ const Header = props => {
         const {isDarkTheme, onToggleTheme} = value
 
         const HeaderThemeButton = isDarkTheme ? (
-          <MdOutlineLightMode size={30} color="#ffffff" />
+          <BsBrightnessHigh size={30} color="#ffffff" />
         ) : (
-          <FaMoon size={30} />
+          <BsMoon size={30} />
         )
 
         const navbarLogoOnTheme = isDarkTheme
@@ -76,7 +75,7 @@ const Header = props => {
                   {close => (
                     <LogoutPopupContainer isDarkTheme={isDarkTheme}>
                       <LogoutPopupHeading isDarkTheme={isDarkTheme}>
-                        Are you sure you want to logout?
+                        Are you sure, you want to logout?
                       </LogoutPopupHeading>
                       <PopupButtonsContainer>
                         <PopupCancelButton onClick={() => close()}>

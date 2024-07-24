@@ -14,7 +14,7 @@ export const GameCardImage = styled.img`
   width: 90%;
   margin-bottom: 20px;
 `
-export const GameCardTitle = styled.h1`
+export const GameCardTitle = styled.p`
   color: ${props => (props.isDarkTheme ? '#ffffff' : '#000000')};
   font-family: 'Roboto';
   font-size: 20px;

@@ -2,12 +2,19 @@ import styled from 'styled-components'
 
 export const SavedVideosContainer = styled.div`
   min-height: 100vh;
+  max-width: 100vw;
   background-color: blue;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   margin-left: 250px;
   margin-top: 80px;
   background-color: ${props => (props.isDarkTheme ? '#0f0f0f' : '#f9f9f9')};
+`
+
+export const SavedVideosViewContainer = styled.div`
+  min-height: 100vh;
+  width: 100%;
 `
 export const SavedVideosTitleContainer = styled.div`
   width: 100%;
@@ -37,14 +44,12 @@ export const SavedVideos = styled.ul`
 `
 
 export const NoSavedVideosContainer = styled.div`
-  margin-left: 250px;
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${props => (props.isDarkTheme ? '#000000' : '#f8fafc')};
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 `
 
 export const NoSavedVideosImg = styled.img`

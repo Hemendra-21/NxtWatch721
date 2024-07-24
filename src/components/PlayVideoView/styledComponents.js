@@ -80,7 +80,7 @@ export const CommentProfileImg = styled.img`
 
 export const CommentDetailsContainer = styled.div``
 
-export const CommentChannelName = styled.h1`
+export const CommentChannelName = styled.p`
   font-family: 'Roboto';
   font-size: 15px;
   font-weight: 500;

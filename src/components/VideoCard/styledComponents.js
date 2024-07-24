@@ -15,7 +15,7 @@ export const VideoCardDetails = styled.div`
   margin-left: 20px;
 `
 
-export const VideoTitle = styled.h1`
+export const VideoTitle = styled.p`
   font-family: 'Roboto';
   font-size: 18px;
   margin-bottom: 10px;

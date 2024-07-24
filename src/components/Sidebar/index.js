@@ -113,7 +113,7 @@ const Sidebar = () => (
               </SidebarItem>
             </NavLink>
 
-            <NavLink to="/saved">
+            <NavLink to="/saved-videos">
               <SidebarItem
                 onClick={onClickSavedVideosTab}
                 bgColor={activeTab === 'Saved' ? activeTabBgColor : tabBgColor}

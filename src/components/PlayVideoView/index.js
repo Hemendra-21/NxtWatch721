@@ -48,7 +48,7 @@ const PlayVideoView = props => {
   return (
     <NxtWatchContext.Consumer>
       {value => {
-        const {addToSavedVideos, savedVideos, isDarkTheme} = value
+        const {updateSavedVideos, savedVideos, isDarkTheme} = value
         const index = savedVideos.findIndex(eachVideo => eachVideo.id === id)
         let isSaved
         if (index === -1) {
@@ -91,14 +91,14 @@ const PlayVideoView = props => {
                 <EventButton onClick={() => onClickDislikeBtn()}>
                   <BiDislike
                     size={20}
-                    color={isDisliked ? ' #4f46e5' : '#64748b'}
+                    color={isDisliked ? ' #2563eb' : '#64748b'}
                   />
-                  <ButtonText color={isDisliked ? ' #4f46e5' : '#64748b'}>
+                  <ButtonText color={isDisliked ? ' #2563eb' : '#64748b'}>
                     Dislike
                   </ButtonText>
                 </EventButton>
 
-                <EventButton onClick={() => addToSavedVideos(details)}>
+                <EventButton onClick={() => updateSavedVideos(details)}>
                   <RiPlayListAddLine
                     size={20}
                     color={isSaved ? ' #4f46e5' : '#64748b'}
@@ -112,7 +112,7 @@ const PlayVideoView = props => {
 
             <Divider />
             <CommentContainer>
-              <CommentProfileImg src={profileImageUrl} />
+              <CommentProfileImg src={profileImageUrl} alt="channel logo" />
               <CommentDetailsContainer>
                 <div>
                   <CommentChannelName isDarkTheme={isDarkTheme}>

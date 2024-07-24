@@ -2,8 +2,7 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 
-import {RxCross2} from 'react-icons/rx'
-import {MdOutlineSearch} from 'react-icons/md'
+import {AiOutlineClose, AiOutlineSearch} from 'react-icons/ai'
 
 import Header from '../Header/index'
 import Sidebar from '../Sidebar/index'
@@ -107,7 +106,7 @@ class Home extends Component {
         onClick={this.onClickRemoveBannerButton}
         data-testid="close"
       >
-        <RxCross2 size={20} />
+        <AiOutlineClose size={20} />
       </BannerRemoveButton>
     </HomeBannerContainer>
   )
@@ -121,7 +120,6 @@ class Home extends Component {
   }
 
   onClickRetryButton = () => {
-    console.log('clicked')
     this.setState({searchInput: ''}, this.getHomeData)
   }
 
@@ -142,7 +140,7 @@ class Home extends Component {
           isDarkTheme={theme}
           data-testid="searchButton"
         >
-          <MdOutlineSearch size={18} color={searchIconColor} />
+          <AiOutlineSearch size={18} color={searchIconColor} />
         </SearchButton>
       </>
     )
@@ -162,10 +160,10 @@ class Home extends Component {
         return (
           <HomeVideos homeVideos={homeVideos} retry={this.onClickRetryButton} />
         )
-      case apiStatusConstants.failure:
-        return <FailureView retry={this.onClickRetryButton} />
       case apiStatusConstants.inProgress:
         return this.renderSpinner()
+      case apiStatusConstants.failure:
+        return <FailureView retry={this.onClickRetryButton} />
       default:
         return null
     }

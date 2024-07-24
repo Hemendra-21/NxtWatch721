@@ -1,4 +1,4 @@
-import {LuDot} from 'react-icons/lu'
+import {BsDot} from 'react-icons/bs'
 import {
   ListItem,
   VideoThumbnail,
@@ -30,7 +30,7 @@ const VideoItem = props => (
                 <VideoTitle isDarkTheme={isDarkTheme}>{title}</VideoTitle>
                 <ChannelName>{name}</ChannelName>
                 <ViewsCountAndDate>
-                  {viewCount} views <LuDot size={25} /> {publishedAt}
+                  {viewCount} views <BsDot size={25} /> {publishedAt}
                 </ViewsCountAndDate>
               </VideoDetails>
             </ListItemDetails>

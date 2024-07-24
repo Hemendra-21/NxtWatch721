@@ -28,10 +28,23 @@ class App extends Component {
     this.setState(prevState => ({isDarkTheme: !prevState.isDarkTheme}))
   }
 
-  addToSavedVideos = videoId => {
-    this.setState(prevState => ({
-      savedVideos: [...prevState.savedVideos, videoId],
-    }))
+  updateSavedVideos = videoInfo => {
+    const {id} = videoInfo
+    const {savedVideos} = this.state
+    const isVideoAlreadySaved = savedVideos.findIndex(
+      eachVideo => eachVideo.id === id,
+    )
+
+    if (isVideoAlreadySaved === -1) {
+      this.setState(prevState => ({
+        savedVideos: [...prevState.savedVideos, videoInfo],
+      }))
+    } else {
+      const updatedVideosList = savedVideos.filter(
+        eachVideo => eachVideo.id !== id,
+      )
+      this.setState({savedVideos: updatedVideosList})
+    }
   }
 
   render() {
@@ -44,7 +57,7 @@ class App extends Component {
           isDarkTheme,
           onToggleTheme: this.onToggleTheme,
           savedVideos,
-          addToSavedVideos: this.addToSavedVideos,
+          updateSavedVideos: this.updateSavedVideos,
         }}
       >
         <Switch>
@@ -57,9 +70,9 @@ class App extends Component {
           />
           <ProtectedRoute exact path="/trending" component={Trending} />
           <ProtectedRoute exact path="/gaming" component={Gaming} />
-          <ProtectedRoute exact path="/saved" component={Saved} />
+          <ProtectedRoute exact path="/saved-videos" component={Saved} />
           <Route path="/not-found" component={NotFound} />
-          <Redirect to="/not-found" />
+          <Redirect to="not-found" />
         </Switch>
       </NxtWatchContext.Provider>
     )

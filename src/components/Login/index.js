@@ -107,7 +107,7 @@ class Login extends Component {
                 onSubmit={this.onSubmitLogin}
                 isDarkTheme={isDarkTheme}
               >
-                <LoginPageLogo src={loginPageLogo} />
+                <LoginPageLogo src={loginPageLogo} alt="website logo" />
                 <InputContainer>
                   <LabelName htmlFor="username" isDarkTheme={isDarkTheme}>
                     USERNAME

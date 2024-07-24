@@ -36,9 +36,9 @@ const HomeVideos = props => {
               No search results found
             </NoResultsViewHeading>
             <NoResultsViewDescription>
-              Try different keywords or remove search filter
+              Try different key words or remove search filter
             </NoResultsViewDescription>
-            <NoResultsViewRetryButton onClick={() => retry()}>
+            <NoResultsViewRetryButton type="button" onClick={() => retry()}>
               Retry
             </NoResultsViewRetryButton>
           </NoResultsViewContainer>

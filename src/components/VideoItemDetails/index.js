@@ -69,6 +69,8 @@ class VideoItemDetails extends Component {
         apiStatus: apiStatusConstants.success,
         videoDetails: formattedData,
       })
+    } else {
+      this.setState({apiStatus: apiStatusConstants.failure})
     }
   }
 
@@ -114,22 +116,13 @@ class VideoItemDetails extends Component {
   }
 
   render() {
-    const {apiStatus, videoDetails} = this.state
-
     return (
-      <NxtWatchContext.Consumer>
-        {value => {
-          const {isDarkTheme} = value
-          return (
-            <>
-              <Header />
-              <Sidebar />
+      <>
+        <Header />
+        <Sidebar />
 
-              {this.renderVideoItemDetailView()}
-            </>
-          )
-        }}
-      </NxtWatchContext.Consumer>
+        {this.renderVideoItemDetailView()}
+      </>
     )
   }
 }
